@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 if __name__ == '__main__':
@@ -7,4 +7,5 @@ if __name__ == '__main__':
 
 @app.route("/")
 def home():
-    return "Hello, Flask!"
+    return render_template('home.html')
+
