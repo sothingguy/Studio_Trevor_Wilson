@@ -1,0 +1,9 @@
+Cards:
+#00
+westminster_street
+static/img/palceholder.jfif
+Westminster Street
+#01
+westport
+static/img/placeholder2.jpg
+Westport

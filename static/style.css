@@ -10,8 +10,19 @@
 
 /* Home page */
 
+#topLinks {
+	color: black;
+	text-align: center;
+}
+#topLinks a {
+	color: black;
+}
+#topLinks a:hover {
+	text-decoration: none;
+}
+
 /* Main grid */
-#homeGrid {
+.col-container {
 	margin: auto;
 	text-align: center;
 }
@@ -25,13 +36,14 @@
 	transition-duration: 0.5s;
 	filter: grayscale(100%);
 }
+#boxImg {
+	margin: 5px;
+	border-radius: 4px;
+}
 .tableBox img {
 	width: 100%;
 	height: auto;
 	border-radius: 4px;
-}
-#boxImg {
-	padding: 5px;
 }
 .tableBox p {
 	text-align: left;
@@ -42,10 +54,16 @@
 	padding: 1rem;
 	margin: 0px;
 }
-.tableBox:hover {
+.tableBox:hover { /* Hover adjustments for box's */
 	color: rgba(255, 255, 255, 1);
 	filter: grayscale(0%);
 }
+.boxColor { /* For blank box's */
+	border-radius: 4px;
+	margin: 5px;
+}
+
+
 
 /* 404 page */
 #404Button {

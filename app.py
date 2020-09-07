@@ -13,6 +13,10 @@ def home():
 def westminster_street():
     return render_template('westminster_street.html')
 
+@app.route("/westport")
+def westport():
+    return render_template('westport.html')
+
 @app.errorhandler(404)
 def error404(e):
     return render_template('404.html'), 404

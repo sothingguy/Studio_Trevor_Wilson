@@ -1,113 +1,35 @@
 {% extends "base.html" %}
 {% block main %}
+<h1 id="jscriptOut"></h1>
 <div id="content">
 	<div class="container">
 		<div class="row">
 			<div class="col-12" id="HomeSection">
 				<br>
-				<div id="homeGrid">
-					<a href="westminster_street">
+				<p id="topLinks"><a href="westminster_street">Westminster Street</a> • <a href="westport">Westport</a> • <a href="">house 3</a></p>
+				<div class="col-container">
+					<a href="westminster_street" class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
 								<img src="static/img/placeholder.jfif"/>
 							</div>
-							<p>Westminster Street</p>
+							<p class="cardText">Westminster Street</p>
 						</div>
 					</a>
-					<a href="westminster_street">
+					<a href="westport" class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
+								<img src="static/img/placeholder2.jpg" class="cardImg"/>
 							</div>
-							<p>Westminster Street</p>
+							<p class="cardText">Westport</p>
 						</div>
 					</a>
-					<a href="westminster_street">
+					<a href="">
 						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
+							<div id="boxImg" style="background-color: darkgray;">
+								<img src=""/>
 							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
-						</div>
-					</a>
-					<a href="westminster_street">
-						<div class="tableBox col-sm-6 col-md-3">
-							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
-							</div>
-							<p>Westminster Street</p>
+							<p></p>
 						</div>
 					</a>
 					<a href="westminster_street">
@@ -139,4 +61,9 @@
 		</div>
 	</div>
 </div>
+<script>
+var img = document.getElementById("boxColor").offsetWidth();
+
+document.getElementById("boxColor").style("height:" + img + ";");
+</script>
 {% endblock %}
