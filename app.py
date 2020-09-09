@@ -8,6 +8,10 @@ if __name__ == '__main__':
 def home():
     return render_template('home.html')
 
+@app.route("/gallary")
+def gallary():
+    return render_template('gallary.html')
+
 @app.route("/westminster_street")
 def westminster_street():
     return render_template('westminster_street.html')

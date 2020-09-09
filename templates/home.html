@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
-<h1 id="jscriptOut"></h1>
+<p id="demo">yeet</p>
 <div id="content">
 	<div class="container">
 		<div class="row">
@@ -8,20 +8,20 @@
 				<br>
 				<p id="topLinks"><a href="westminster_street">Westminster Street</a> • <a href="westport">Westport</a> • <a href="">house 3</a></p>
 				<div class="col-container">
-					<a href="westminster_street" class="cardLink">
+					<a href="westminster_street">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
 								<img src="static/img/placeholder.jfif"/>
 							</div>
-							<p class="cardText">Westminster Street</p>
+							<p>Westminster Street</p>
 						</div>
 					</a>
-					<a href="westport" class="cardLink">
+					<a href="westminster_street">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
-								<img src="static/img/placeholder2.jpg" class="cardImg"/>
+								<img src="static/img/placeholder.jfif"/>
 							</div>
-							<p class="cardText">Westport</p>
+							<p>Westminster Street</p>
 						</div>
 					</a>
 					<a href="">
@@ -40,20 +40,29 @@
 							<p>Westminster Street</p>
 						</div>
 					</a>
-					<a href="westminster_street">
+					<h1> testing JS </h1>
+					<a href="westminster_street" class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
+								<img src="" class="cardImg"/>
 							</div>
-							<p>Westminster Street</p>
+							<p class="cardText">Westminster Street</p>
 						</div>
 					</a>
-					<a href="westminster_street">
+					<a href="westminster_street" class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div id="boxImg">
-								<img src="static/img/placeholder.jfif"/>
+								<img src="" class="cardImg"/>
 							</div>
-							<p>Westminster Street</p>
+							<p class="cardText">Westminster Street</p>
+						</div>
+					</a>
+					<a href="westminster_street" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div id="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText">Westminster Street</p>
 						</div>
 					</a>
 				</div>
@@ -62,8 +71,16 @@
 	</div>
 </div>
 <script>
-var img = document.getElementById("boxColor").offsetWidth();
+var images = ["static/img/placeholder.jfif", "static/img/placeholder2.jpg", "static/img/placeholder3.jpg"]
+var imageTag = document.getElementsByClassName("cardImg");
+document.getElementById("demo").innerHTML = imageTag.length;
+for (var i=0; i < imageTag.length; i++) {
+	var randomNum = Math.floor(Math.random() * images.length);
+	console.log(images);
+	imageTag[i].src = images[randomNum];
+	images.splice(randomNum, 1);
+	console.log(images);
+}
 
-document.getElementById("boxColor").style("height:" + img + ";");
 </script>
 {% endblock %}
