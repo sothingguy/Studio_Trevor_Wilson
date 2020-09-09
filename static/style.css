@@ -36,6 +36,11 @@
 	transition-duration: 0.5s;
 	filter: grayscale(100%);
 }
+.boxImg {
+	margin: 5px;
+	border-radius: 4px;
+	background-color: darkgray;
+}
 #boxImg {
 	margin: 5px;
 	border-radius: 4px;

@@ -12,6 +12,10 @@ def home():
 def gallary():
     return render_template('gallary.html')
 
+@app.route("/my_process")
+def my_process():
+    return render_template('my_process.html')
+
 @app.route("/westminster_street")
 def westminster_street():
     return render_template('westminster_street.html')

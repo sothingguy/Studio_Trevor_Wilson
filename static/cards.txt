@@ -7,3 +7,6 @@ Westminster Street
 westport
 static/img/placeholder2.jpg
 Westport
+#02
+my_process
+static/img/placeholder3.jpgMy Process
