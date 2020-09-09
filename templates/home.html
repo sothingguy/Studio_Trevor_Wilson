@@ -71,10 +71,16 @@
 	</div>
 </div>
 <script>
-var items = document.getElementsByClassName("cardImg");
-document.getElementById("demo").innerHTML = items.length;
-for (var i=0; i < items.length; i++) {
-	items[i].src = "static/img/placeholder.jfif";
+var images = ["static/img/placeholder.jfif", "static/img/placeholder2.jpg", "static/img/placeholder3.jpg"]
+var imageTag = document.getElementsByClassName("cardImg");
+document.getElementById("demo").innerHTML = imageTag.length;
+for (var i=0; i < imageTag.length; i++) {
+	var randomNum = Math.floor(Math.random() * images.length);
+	console.log(images);
+	imageTag[i].src = images[randomNum];
+	images.splice(randomNum, 1);
+	console.log(images);
 }
+
 </script>
 {% endblock %}
