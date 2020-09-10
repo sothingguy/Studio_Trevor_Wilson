@@ -142,7 +142,7 @@ if (textTag.length == linkTag.length && linkTag.length == imageTag.length) {
 				
 				linkTag[i].style.cursor = "default"; // change the cursor for blanks
 				
-				contTag[i].style.height = (contTag[i].offsetWidth - 0.5) + "px"; // making the height the same as the width
+				contTag[i].style.height = (contTag[i].offsetWidth + 0.5) + "px"; // making the height the same as the width
 				
 				contTag[i].classList.add("blank");
 				
@@ -176,7 +176,7 @@ function resize() { //resize the blank box's
 	var contTag = document.getElementsByClassName("blank");
 	if (window.outerWidth > 767) {
 		for (var i=0; i < contTag.length; i++) {
-			contTag[i].style.height = (contTag[i].offsetWidth - 0.5) + "px";
+			contTag[i].style.height = (contTag[i].offsetWidth + 0.5) + "px";
 			contTag[i].style.display = "block";
 		}
 	} else {
