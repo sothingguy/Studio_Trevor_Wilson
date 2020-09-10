@@ -2,7 +2,7 @@
 {% block main %}
 <div id="content">
 	<div class="container">
-		<div class="row">
+		<div class="row row-eq-height">
 			<div class="col-12" id="HomeSection">
 				<br>
 				<p id="topLinks"><a href="westminster_street">Westminster Street</a> • <a href="westport">Westport</a> • <a href="">house 3</a></p>
@@ -47,12 +47,70 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
+					<a href="" class="cardLink">
+						<div class="tableBox col-sm-6 col-md-3">
+							<div class="boxImg">
+								<img src="" class="cardImg"/>
+							</div>
+							<p class="cardText"></p>
+						</div>
+					</a>
 				</div>
+				<br>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
+//var image1 =
 var links = ["westminster_street", "westport", "my_process"]
 var images = ["static/img/placeholder.jfif", "static/img/placeholder2.jpg", "static/img/placeholder3.jpg"]
 var texts = ["Westminster Street", "Westport", "My Process"]
@@ -64,7 +122,8 @@ var contTag = document.getElementsByClassName("boxImg"); // For blank squares
 
 if (textTag.length == linkTag.length && linkTag.length == imageTag.length) {
 	if (textTag.length != links.length) {
-		for (var i=0; i < (linkTag.length - links.length); i++) {
+		var dif = linkTag.length - links.length;
+		for (var i=0; i < dif; i++) {
 			links.push("_");
 		}
 	}
@@ -72,8 +131,11 @@ if (textTag.length == linkTag.length && linkTag.length == imageTag.length) {
 		var randomNum = Math.floor(Math.random() * links.length);
 		
 		if (links[randomNum] == "_") {
-			//contTag[i].innerHTML = "darkgray";
-			imageTag[i].src = "static/img/blank.jpg";
+			//imageTag[i].src = "static/img/blank.jpg";
+			//contTag[i].style.padding-top = 100%;
+			var color = Math.floor(Math.random() * (180 - 64) ) + 64;
+			contTag[i].classList.add("boxColor");
+			contTag[i].style.backgroundColor = "rgb(" + color + ", " + color + ", " + color + ")";
 			links.splice(randomNum, 1);
 		} else {
 			linkTag[i].href = links[randomNum];

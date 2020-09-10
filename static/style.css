@@ -5,7 +5,9 @@
 }
 .row {
 	background-color: #e6e6e6;
-	height: 94vh;
+	height: 100%;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 /* Home page */
@@ -35,19 +37,15 @@
 	padding: 0px;
 	transition-duration: 0.5s;
 	filter: grayscale(100%);
+	width: 100%;
 }
 .boxImg {
 	margin: 5px;
 	border-radius: 4px;
 	background-color: darkgray;
 }
-#boxImg {
-	margin: 5px;
-	border-radius: 4px;
-}
 .tableBox img {
 	width: 100%;
-	height: auto;
 	border-radius: 4px;
 }
 .tableBox p {
@@ -64,8 +62,7 @@
 	filter: grayscale(0%);
 }
 .boxColor { /* For blank box's */
-	border-radius: 4px;
-	margin: 5px;
+	height: 222.5px;
 }
 
 /* 404 page */
