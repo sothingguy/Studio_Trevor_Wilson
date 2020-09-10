@@ -42,7 +42,6 @@
 .boxImg {
 	margin: 5px;
 	border-radius: 4px;
-	background-color: darkgray;
 }
 .tableBox img {
 	width: 100%;
@@ -60,9 +59,6 @@
 .tableBox:hover { /* Hover adjustments for box's */
 	color: rgba(255, 255, 255, 1);
 	filter: grayscale(0%);
-}
-.boxColor { /* For blank box's */
-	height: 222.5px;
 }
 
 /* 404 page */

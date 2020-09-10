@@ -4,10 +4,11 @@
 	<div class="container">
 		<div class="row row-eq-height">
 			<div class="col-12" id="HomeSection">
-				<br>
-				<p id="topLinks"><a href="westminster_street">Westminster Street</a> • <a href="westport">Westport</a> • <a href="">house 3</a></p>
+				<div class="col-8 offset-2">
+					<p id="topLinks"><a href="westminster_street">Westminster Street</a> • <a href="westport">Westport</a> • <a href="">house 3</a></p>
+				</div>
 				<div class="col-container">
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -15,7 +16,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -23,7 +24,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -31,7 +32,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -39,7 +40,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -47,7 +48,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -55,7 +56,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -63,7 +64,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -71,7 +72,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -79,7 +80,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -87,7 +88,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -95,7 +96,7 @@
 							<p class="cardText"></p>
 						</div>
 					</a>
-					<a href="" class="cardLink">
+					<a class="cardLink">
 						<div class="tableBox col-sm-6 col-md-3">
 							<div class="boxImg">
 								<img src="" class="cardImg"/>
@@ -110,7 +111,10 @@
 	</div>
 </div>
 <script>
-//var image1 =
+
+var data = '[{"link": "westminster_street","images": "static/img/placeholder.jfif","text": "Westminster Street"},{"link": "westport","images": "static/img/placeholder2.jpg","text": "Westport"},{"link": "my_process","images": "static/img/placeholder3.jpg","text": "My Process"}]';
+data = JSON.parse(data);
+
 var links = ["westminster_street", "westport", "my_process"]
 var images = ["static/img/placeholder.jfif", "static/img/placeholder2.jpg", "static/img/placeholder3.jpg"]
 var texts = ["Westminster Street", "Westport", "My Process"]
@@ -122,34 +126,67 @@ var contTag = document.getElementsByClassName("boxImg"); // For blank squares
 
 if (textTag.length == linkTag.length && linkTag.length == imageTag.length) {
 	if (textTag.length != links.length) {
-		var dif = linkTag.length - links.length;
+		var dif = linkTag.length - links.length; // calculating how many blank squears
 		for (var i=0; i < dif; i++) {
-			links.push("_");
+			links.push("_"); // adding an underscore for heach blank square
 		}
 	}
 	for (var i=0; i < linkTag.length; i++) {
 		var randomNum = Math.floor(Math.random() * links.length);
 		
-		if (links[randomNum] == "_") {
-			//imageTag[i].src = "static/img/blank.jpg";
-			//contTag[i].style.padding-top = 100%;
-			var color = Math.floor(Math.random() * (180 - 64) ) + 64;
-			contTag[i].classList.add("boxColor");
-			contTag[i].style.backgroundColor = "rgb(" + color + ", " + color + ", " + color + ")";
-			links.splice(randomNum, 1);
+		if (links[randomNum] == "_") { // for blank box's
+			if (window.outerWidth > 767) { // detect if on mobile device
+				// setting the blank box to a random color
+				var color = Math.floor(Math.random() * (180 - 64) ) + 64;
+				contTag[i].style.backgroundColor = "rgb(" + color + ", " + color + ", " + color + ")";
+				
+				linkTag[i].style.cursor = "default"; // change the cursor for blanks
+				
+				contTag[i].style.height = (contTag[i].offsetWidth - 0.5) + "px"; // making the height the same as the width
+				
+				contTag[i].classList.add("blank");
+				
+				links.splice(randomNum, 1); // take the blank out of the main array
+			} else { // hide blanks if on mobile
+				contTag[i].style.display = "none";
+				links.splice(randomNum, 1);
+			}
 		} else {
+			//changing the link and taking it out of the array
 			linkTag[i].href = links[randomNum];
 			links.splice(randomNum, 1);
 			
+			//same as above but with images
 			imageTag[i].src = images[randomNum];
 			images.splice(randomNum, 1);
 			
+			//same as above but with the text
 			textTag[i].innerHTML = texts[randomNum];
 			texts.splice(randomNum, 1);
 		}
 	}
 } else {
+	// if somthing dodnt line up
 	document.getElementById("topLinks").innerHTML = "Fatal Error";
 }
+
+
+function resize() { //resize the blank box's
+	// get containers
+	var contTag = document.getElementsByClassName("blank");
+	if (window.outerWidth > 767) {
+		for (var i=0; i < contTag.length; i++) {
+			contTag[i].style.height = (contTag[i].offsetWidth - 0.5) + "px";
+			contTag[i].style.display = "block";
+		}
+	} else {
+		for (var i=0; i < contTag.length; i++) {
+			contTag[i].style.display = "none";
+		}
+	}
+}
+
+window.addEventListener("resize", resize); // resizes teh blanks if the window changes
+
 </script>
 {% endblock %}
